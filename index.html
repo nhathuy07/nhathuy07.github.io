@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta title="My Portfolio">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="modal.css">
+
+    <script>
+        // TODO: Add filtering options by year and medal type
+
+const awards = [
+            ["Gold Prize", "INOVA-CROATIA", 2024, "inova-croatia.webp"],
+            ["Consolation Prize", "National Round - National Young Competition for Information Processing", 2024, "final-round-national-young-association-for-information-processing.webp"],
+            ["First Prize", "Regional Round - National Young Competition for Information Processing", 2024, "regional-round-national-young-association-for-information-processing.webp"],
+            ["Third Prize", "VNU Foreign Languages Olympiad for High-school Students (Vietnam National University)", 2024, "vnu-foreign-language-olympiad.webp"],
+            ["Third Prize", "National Round - International Office Information Championship - VIETTEL", 2024, "national-round-MOS-championship.webp"],
+            ["Third Prize", "Regional Round - National Young Competition for Information Processing", 2023, "tht2023.webp"],
+            ["First Prize", "School's English competition for Excellent students", 2024, "school-level-contest-for-excellent-pupils-english.webp"],
+            ["First Prize", "School's Information Technology competition for Excellent students", 2024, "school-level-contest-for-excellent-pupils-informatics.webp"],
+            ["Gold Award", "English - National Round - Asian Science and Mathematics Olympiad (ASMO)", 2023, "asmo-state-level-english.webp"],
+            ["Gold Award", "Science - State Round - ASMO", 2023, "asmo-state-level-science.webp"],
+            ["Best Business Branding Idea", "ERCI Start-up Championship", 2021, "erci2021.webp"]
+        ]
+
+        // Toggle modals and nothing else
+        function toggleModal(open) {
+
+            let modalDiv = document.getElementById("project_modal")
+            if (!open) {
+                modalDiv.style.display = "none"
+            } else {
+            
+            modalDiv.style.display = "block"
+            }
+
+
+
+            
+
+            // If user clicks anywhere outside the modal, close it
+            window.onclick = function(event) {
+            if (event.target == modalDiv) {
+                modalDiv.style.display = "none";
+            }
+            }
+        }
+
+        // This part does a rather simple thing: it inserts cards displaying my awards into the DOM. 
+        // that way, i could just add another entry to the array above if I ever got another award.
+        function fetchContent(_, ev) {
+
+        let award_sorted = awards.sort((a, b) => b[2] - a[2])
+
+        let awardListDOM = document.getElementById("award_list_1")
+
+        awardListDOM.innerHTML = ""
+        // console.log(awardListDOM)
+
+        // <div class="award_card">
+            // <img width="100%" src="https://media.istockphoto.com/id/1409329028/vector/no-picture-available-placeholder-thumbnail-icon-illustration-design.jpg?s=612x612&w=0&k=20&c=_zOuJu755g2eEUioiOUdz_mHKJQJn-tDgIAhQzyeKUQ=" alt="">
+            //         <p>20xx</p>
+            //         <h3>[Award Name]</h3>
+                    
+            //     </div>
+
+        awards.forEach(element => {
+            let awardCard = document.createElement("div");
+            awardCard.className = "award_card";
+            let imgDOM = document.createElement("img")
+            imgDOM.loading = "lazy"
+            
+            if (element[3] != undefined) {
+                imgDOM.src = "assets/certs/archive/" + element[3]
+            
+            } else {
+                imgDOM.src = "assets/placeholder.webp"
+            }
+
+            imgDOM.style.width = "auto"
+            imgDOM.style.height = "auto"
+            imgDOM.style.maxWidth = "100%"
+            imgDOM.style.maxHeight = "100%"
+            
+
+            let pDOM = document.createElement("p")
+            let prizeLabel = document.createElement("h3")
+            let h3DOM = document.createElement("h3")
+            
+            let imgContainer = document.createElement("div")
+            imgContainer.style.height = "200px"
+            imgContainer.style.width = "100%"
+            imgContainer.style.display = "flex"
+            imgContainer.style.alignItems = "center"
+            imgContainer.style.justifyContent = "center"
+
+            pDOM.innerText = element[2]
+            prizeLabel.innerText = element[0]
+            h3DOM.innerText = element[1]
+            
+            h3DOM.className = "award_title"
+            
+            imgContainer.appendChild(imgDOM)
+
+            awardCard.appendChild(imgContainer);
+            awardCard.appendChild(pDOM);
+            awardCard.appendChild(prizeLabel);
+            awardCard.appendChild(h3DOM);
+            awardListDOM.appendChild(awardCard)
+
+        });
+
+    }
+
+    document.addEventListener("DOMContentLoaded", fetchContent)
+
+    </script>
+
+    <title>Document</title>
+</head>
+<body>
+
+    
+    <div class="banner">
+        <div class="banner_content">
+            <div id="left">
+                <h2>Greetings, I'm</h2>
+                <h1>Huy Nguyen</h1>
+                <h3>A high school senior who loves making apps and experimenting with new ideas.</h2>
+
+                <a class="styled" id="profile_link" href="#detail">My Portfolio</a>
+                <a style="margin-left: 10px;" class="styled" id="profile_link" href="#features_bmark">Projects</a>
+                <a href="#contacts_2" class="styled" style="margin-left:9px;">Contacts</a>
+            
+            </div>
+            <div id="right">
+                <img width="300px" src="assets/p.png" alt="">
+            </div>
+        </div>
+        
+    </div>
+
+
+    <div id="detail">
+        <h2>👤 My academic portfolio</h2>
+
+        <div id="overview_row">
+            <div id="education">
+                <h3>🎓 Education</h3>
+                <p><a target="_blank" href="https://lomonoxop.edu.vn/">Lomonoxop Secondary and High School</a>, class of 2025</p>
+                <p>GPA:</p>
+                <ul id="gpa_list" list-style-type="disk">
+                    <li>10th Grade: 9.23/10</li>
+                    <li>11th Grade: 9.13/10</li>
+                    <li>12th Grade (1st semester): 9.56/10</li>
+                </ul>
+                <p><a href="sub/school_scholarship_roll.html">School's scholarship roll</a>: Sept. 2024 thru May 2025</p>
+            </div>
+            
+            <div class="vl"></div>
+
+            <div id="certs">
+                <h3>📄 Certifications</h3>
+                <ul id="cert_list" list-style-type="disk">
+                    <a href="sub/microsoft_office_specialist_cert.html"><li>Microsoft Office Specialist Associate</li></a>
+                    <a href="sub/ielts_score_slip.html"><li>IELTS 8.0</li></a> 
+                    <a href="sub/sat_score_slip.html"><li>SAT 1550/1600</li></a>
+                </ul>
+
+            </div>
+        </div>
+
+        <div id="awards">
+            <div class="awards_title">
+                <h3>🏅 Awards & honors</h3>
+                <span>
+                    
+                    <select name="f_year" id="f_year">
+                        <option value="*">Any year</option>
+                    </select>
+                    <select name="f_prize" id="f_prize">
+                        <option value="*">Any prize</option>
+                    </select>
+                    <button >Hide</button>
+                </span>
+                
+            </div>
+            
+
+            <div class="award_list" id="award_list_1">
+            </div>
+            
+
+
+        </div>
+
+        
+        
+    </div>
+
+    <span style="padding: 0px; margin: 0px; border-width: 0px; height: 0px;" id="features_bmark"></span>
+
+    <div id="features">
+        <h2>⭐ Passion projects</h2>
+        <div class="feat_card">
+            <div class="feat_illustr">
+                <img width="100%" src="assets/text2quiz.webp" alt="">
+            </div>
+            <div class="feat_info">
+                <h3>Text2Quiz</h3>
+                <p>Get instant <b>quizzes & flashcards</b> tuned to your subjects of interest using AI. Developed for Vietnam's National Young Competition for Information Processing as a solo entry.</p>
+                
+                <div class="spaced_container">
+                    <a class="styled_noborder" target="_blank" href="https://text2quiz-three.vercel.app">Try it out!</a>
+                    <a class="styled_noborder" href="sub/text2quiz_behindthescenes.html">Behind-the-scenes</a>
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="feat_card">
+            <div class="feat_illustr">
+                <img src="assets/pygame4kids.webp" width="100%" alt="">
+            </div>
+            
+            <div class="feat_info">
+                <h3>PyGame for Kids</h3>
+                <p>A small pay-it-forward project aiming to familiarize young children with <b>Python and game programming.</b> Involves tutoring, curriculum planning, student onboarding and evaluation.</p>
+                
+                <div class="spaced_container">
+                    <!-- <a target="_blank" class="styled_noborder" href="sub/pygame4kids.html">Course materials</a> -->
+                    <a class="styled_noborder" href="sub/pygame4kids.html">See more...</a>
+                </div>
+    
+            </div>
+            
+            
+            
+        </div>
+        <div style="min-width: 100%;display: flex;justify-content: center;">
+            <a style="align-self: center;" class="styled" onclick="toggleModal(true)">View other projects</a>
+        </div>
+
+
+        
+    </div>
+
+    <div class="contacts" id="contacts_2">
+        <h2>Contacts</h2>
+        <a target="_blank" href="mailto:huyndn2007@gmail.com">E: huyndn2007@gmail.com</a>
+    </div>
+
+    <div id="project_modal" class="modal">
+        <div class="modal-content">
+            <a class="styled_noborder" onclick="toggleModal(false)">&times; Close</a>
+            <!-- <span>Close</span> -->
+             <h2 style="margin-bottom: 5px; margin-top: 40px;">Here are my other programming projects</h2>
+             <p style="margin-top: 10px; margin-bottom: 40px;">Feel free to explore!</p>
+
+             <div class="modal_proj_card">
+                <h2>Catch the Primes</h2>
+                <p>A time-attack game where you catch prime number orbs using your trackpad. Features dreamy aesthetics and soundscapes.</p>
+                <div class="action_btns">
+                    <a class="styled_noborder" href="https://github.com/nhathuy07/CatchThePrimes_Game/releases/download/1.0.0/exe.win-amd64-3.10.zip">Download (Windows)</a> 
+                    <a class="styled_noborder" href="https://github.com/nhathuy07/CatchThePrimes_Game">Source Code</a>
+                </div>
+                
+            </div>
+
+             <div class="modal_proj_card">
+                <h2>BeatCatcher</h2>
+                <p>A rhythm mini-game that you play using your own song library.</p>
+                <div class="action_btns">
+                    <a class="styled_noborder" href="https://github.com/nhathuy07/BeatCatcher/releases/download/v0.1.1/BeatCatcher-0.1.1.exe">Download (Windows)</a> 
+                    <a class="styled_noborder" href="https://github.com/nhathuy07/BeatCatcher">Source Code</a>
+                </div>
+            
+            </div>
+             
+             <div class="modal_proj_card">
+                <h2>SpaceMiner</h2>
+                <p>An end-of-course project for <a href="https://steamforvietnam.org/en">STEAM for Vietnam's CS102 Course.</a> Requires Python 3.8+ and PyGame to run.</p>
+                <div class="action_btns">
+                    <!-- <a class="styled_noborder" href="https://github.com/nhathuy07/BeatCatcher/releases/download/v0.1.1/BeatCatcher-0.1.1.exe">Downloads (Windows)</a>  -->
+                    <a class="styled_noborder" href="https://github.com/nhathuy07/CodingCourseProject">Source Code</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
