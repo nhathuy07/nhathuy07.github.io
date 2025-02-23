@@ -1,3 +1,9 @@
+
+html {
+    scroll-behavior: smooth;
+  }
+
+  
 body {
     margin: 0px;
     font-family: "Inter", serif;
@@ -311,4 +317,46 @@ a.styled_noborder:hover {
 .spaced_container {
     display: flex;
     gap: 15px;
+}
+
+select {
+    padding:5px;
+    color: #235a9a;
+    border-color: #235a9a;
+    border-style: solid;
+    background-color: white;
+}
+
+select:hover {
+    background-color:#235a9a;
+    color: white;
+}
+
+select option {
+    background-color: white;
+    color: black;
+}
+
+select option:hover {
+    background-color: #235a9a;
+    color:white;
+}
+
+button {
+    padding: 5px;
+    color: #235a9a;
+    background-color: white;
+    border-style: solid;
+    border-color: #235a9a;
+    border-width: 1.5px;
+    font-family: "Inter", sans-serif;
+}
+
+button:hover {
+    font-family: "Inter", sans-serif;
+    padding: 5px;
+    color: white;
+    background-color: #235a9a;
+    border-style: solid;
+    border-color: #235a9a;
 }

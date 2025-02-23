@@ -15,20 +15,73 @@
 
     <script>
         // TODO: Add filtering options by year and medal type
+        // 1st prize = 1, 2nd prize = 2, 3rd prize=  3, consolation prize = 4, other = 5
 
-const awards = [
-            ["Gold Prize", "INOVA-CROATIA", 2024, "inova-croatia.webp"],
-            ["Consolation Prize", "National Round - National Young Competition for Information Processing", 2024, "final-round-national-young-association-for-information-processing.webp"],
-            ["First Prize", "Regional Round - National Young Competition for Information Processing", 2024, "regional-round-national-young-association-for-information-processing.webp"],
-            ["Third Prize", "VNU Foreign Languages Olympiad for High-school Students (Vietnam National University)", 2024, "vnu-foreign-language-olympiad.webp"],
-            ["Third Prize", "National Round - International Office Information Championship - VIETTEL", 2024, "national-round-MOS-championship.webp"],
-            ["Third Prize", "Regional Round - National Young Competition for Information Processing", 2023, "tht2023.webp"],
-            ["First Prize", "School's English competition for Excellent students", 2024, "school-level-contest-for-excellent-pupils-english.webp"],
-            ["First Prize", "School's Information Technology competition for Excellent students", 2024, "school-level-contest-for-excellent-pupils-informatics.webp"],
-            ["Gold Award", "English - National Round - Asian Science and Mathematics Olympiad (ASMO)", 2023, "asmo-state-level-english.webp"],
-            ["Gold Award", "Science - State Round - ASMO", 2023, "asmo-state-level-science.webp"],
-            ["Best Business Branding Idea", "ERCI Start-up Championship", 2021, "erci2021.webp"]
+        const awards = [
+            ["Gold Prize", "INOVA-CROATIA", 2024, "inova-croatia.webp", 1],
+            ["Consolation Prize", "National Round - National Young Competition for Information Processing", 2024, "final-round-national-young-association-for-information-processing.webp", 4],
+            ["First Prize", "Regional Round - National Young Competition for Information Processing", 2024, "regional-round-national-young-association-for-information-processing.webp", 1],
+            ["Third Prize", "VNU Foreign Languages Olympiad for High-school Students (Vietnam National University)", 2024, "vnu-foreign-language-olympiad.webp", 3],
+            ["Third Prize", "National Round - International Office Information Championship - VIETTEL", 2024, "national-round-MOS-championship.webp", 3],
+            ["Third Prize", "Regional Round - National Young Competition for Information Processing", 2023, "tht2023.webp", 3],
+            ["First Prize", "School's English competition for Excellent students", 2024, "school-level-contest-for-excellent-pupils-english.webp", 1],
+            ["First Prize", "School's Information Technology competition for Excellent students", 2024, "school-level-contest-for-excellent-pupils-informatics.webp", 1],
+            ["Gold Award", "English - National Round - Asian Science and Mathematics Olympiad (ASMO)", 2023, "asmo-state-level-english.webp", 1],
+            ["Gold Award", "Science - State Round - ASMO", 2023, "asmo-state-level-science.webp", 1],
+            ["Best Business Branding Idea", "ERCI Start-up Championship", 2021, "erci2021.webp", 5]
         ]
+
+        const award_type = ["First Prize", "Second Prize", "Third Prize", "Consolation", "Other"]
+
+        let warnDiv = document.getElementById("screen_warning")
+        let screenWarningBypassed = false
+
+        function bypassWarning() {
+            warnDiv.style.display = 'none'
+            document.removeEventListener('resize', checkScreenSize)
+            document.removeEventListener('DOMContentLoaded', checkScreenSize)
+            document.body.removeEventListener("resize", checkScreenSize)
+            screenWarningBypassed = true
+
+        }
+
+        function createFilters() {
+
+            // Create year filtering
+            let f_year = document.getElementById("f_year")
+            let years = new Set()
+
+            awards.forEach((v, _, __) => {years.add(v[2])})
+            
+            years.forEach((v, _, __) => {
+                let opt_element = document.createElement("option")
+                opt_element.value = v
+                opt_element.innerText = v
+                f_year.add(opt_element)
+            })
+
+            // Create awards filtering
+            let f_prize = document.getElementById("f_prize")
+            
+            award_type.forEach((v, i, _) => {
+                let opt_element = document.createElement('option')
+                opt_element.value = i+1
+                opt_element.innerText = v
+                f_prize.add(opt_element)
+            })
+            
+        }
+
+        function checkScreenSize() {
+
+            
+            console.log(window.innerWidth)
+            if (window.innerWidth < 830) {
+                warnDiv.style.display = "block"
+            } else {
+                warnDiv.style.display = "none"
+            }
+        }
 
         // Toggle modals and nothing else
         function toggleModal(open) {
@@ -38,7 +91,7 @@ const awards = [
                 modalDiv.style.display = "none"
             } else {
             
-            modalDiv.style.display = "block"
+            modalDiv.style.display = "flex"
             }
 
 
@@ -53,9 +106,25 @@ const awards = [
             }
         }
 
+        function filterAwards(ev) {
+
+            let f_year = document.getElementById("f_year")
+            
+            let f_prize = document.getElementById("f_prize")
+
+            let f_year_int = parseInt(f_year.value)
+            let f_prize_int = parseInt(f_prize.value)
+
+
+            // console.log(parseInt(f_year.value), parseInt(f_prize.value))
+
+            dynamicallyRenderAwards(undefined, undefined, f_year_int, f_prize_int)
+        }
+
         // This part does a rather simple thing: it inserts cards displaying my awards into the DOM. 
         // that way, i could just add another entry to the array above if I ever got another award.
-        function fetchContent(_, ev) {
+        function dynamicallyRenderAwards(_, ev, f_year=undefined, f_prize=undefined) {
+            
 
         let award_sorted = awards.sort((a, b) => b[2] - a[2])
 
@@ -71,7 +140,30 @@ const awards = [
                     
             //     </div>
 
+        console.log("filter", f_year, f_prize)
         awards.forEach(element => {
+            
+            // Filtering logic
+            console.log(element[2], element[4])
+
+            if (f_year != undefined) {
+                console.log("f_year", f_year, isNaN(f_year))
+                
+                if (element[2] != f_year && !isNaN(f_year)) {
+                    
+                    return
+                }
+            }
+
+            if (f_prize != undefined) {
+                console.log("f_prize", f_prize, isNaN(f_prize))
+                if (f_prize != element[4] && !isNaN(f_prize)) {
+                    
+                    return
+                }
+            }
+
+
             let awardCard = document.createElement("div");
             awardCard.className = "award_card";
             let imgDOM = document.createElement("img")
@@ -119,13 +211,25 @@ const awards = [
 
     }
 
-    document.addEventListener("DOMContentLoaded", fetchContent)
+    function resetFilter() {
+        document.getElementById("f_year").value = "*"
+        document.getElementById("f_prize").value = "*"
+        dynamicallyRenderAwards(undefined, undefined, undefined, undefined)
+    }
+
+    document.addEventListener("DOMContentLoaded", dynamicallyRenderAwards)
+    document.addEventListener("DOMContentLoaded", createFilters)
+    document.addEventListener("DOMContentLoaded", (ev) => { warnDiv = document.getElementById("screen_warning") })
+    document.addEventListener("DOMContentLoaded", checkScreenSize)
+    // document.addEventListener("resize", checkScreenSize)
+    // document.addEventListener("resize", checkScreenSize)
+    
 
     </script>
 
     <title>Document</title>
 </head>
-<body>
+<body onresize="checkScreenSize()">
 
     
     <div class="banner">
@@ -182,13 +286,13 @@ const awards = [
                 <h3>🏅 Awards & honors</h3>
                 <span>
                     
-                    <select name="f_year" id="f_year">
+                    <select name="f_year" id="f_year" onchange="filterAwards(undefined)">
                         <option value="*">Any year</option>
                     </select>
-                    <select name="f_prize" id="f_prize">
+                    <select name="f_prize" id="f_prize" onchange="filterAwards(undefined)">
                         <option value="*">Any prize</option>
                     </select>
-                    <button >Hide</button>
+                    <button onclick="resetFilter()">Clear</button>
                 </span>
                 
             </div>
@@ -235,7 +339,6 @@ const awards = [
                 <p>A small pay-it-forward project aiming to familiarize young children with <b>Python and game programming.</b> Involves tutoring, curriculum planning, student onboarding and evaluation.</p>
                 
                 <div class="spaced_container">
-                    <!-- <a target="_blank" class="styled_noborder" href="sub/pygame4kids.html">Course materials</a> -->
                     <a class="styled_noborder" href="sub/pygame4kids.html">See more...</a>
                 </div>
     
@@ -255,6 +358,15 @@ const awards = [
     <div class="contacts" id="contacts_2">
         <h2>Contacts</h2>
         <a target="_blank" href="mailto:huyndn2007@gmail.com">E: huyndn2007@gmail.com</a>
+    </div>
+
+    <div id="screen_warning" class="modal ">
+        <div class="modal-content modal-content-centered" style="height: 80%;">
+            <h1 style="font-size: 7rem; margin-bottom: 5px;">⚠️</h1>
+            <h2 style="text-align: center;">Please use a larger screen for this site to display properly</h2>
+            <a class="styled" onclick="bypassWarning()">Continue</a>
+        </div>
+        
     </div>
 
     <div id="project_modal" class="modal">
