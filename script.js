@@ -1,4 +1,3 @@
-// TODO: Add filtering options by year and medal type
 // 1st prize = 1, 2nd prize = 2, 3rd prize=  3, consolation prize = 4, other = 5
 
 const awards = [
