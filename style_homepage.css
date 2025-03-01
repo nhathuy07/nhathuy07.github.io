@@ -210,6 +210,7 @@ i.fa-solid {
     align-self: center;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 40px;
     flex-direction: column;
 }
 
@@ -220,7 +221,7 @@ i.fa-solid {
     margin-left: auto;
     margin-right: auto;
     flex-direction: column;
-    margin-top: 40px;
+
 }
 
 #awards h1 {
