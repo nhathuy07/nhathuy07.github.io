@@ -6,7 +6,7 @@ html {
   
 body {
     margin: 0px;
-    font-family: "Inter", serif;
+    font-family: "Montserrat", serif;
     /* font-size: 1.17rem; */
 }
 
@@ -23,7 +23,7 @@ a:hover {
 
 
 h1 {
-    font-family: "Inter", serif;
+    font-family: "Montserrat", serif;
     font-weight: 700;
     font-size: 5rem;
 }
@@ -349,11 +349,11 @@ button {
     border-style: solid;
     border-color: #235a9a;
     border-width: 1.5px;
-    font-family: "Inter", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 button:hover {
-    font-family: "Inter", sans-serif;
+    font-family: "Montserrat", sans-serif;
     padding: 5px;
     color: white;
     background-color: #235a9a;
