@@ -1,0 +1,17 @@
+Headings (for hierarchy and impact)
+H1 (Main title): 2.5rem – 3rem
+H2 (Section titles): 2rem – 2.5rem
+H3 (Subtitles): 1.5rem – 2rem
+H4 (Smaller section headers): 1.25rem – 1.5rem
+Body Text (for readability)
+Paragraphs (default text): 1rem – 1.125rem
+Secondary text (less important info): 0.875rem – 1rem
+Captions & footnotes: 0.75rem – 0.875rem
+Navigation & Buttons (for accessibility)
+Navbar links: 1rem – 1.125rem
+Buttons (standard size): 1rem – 1.25rem
+Small buttons or tags: 0.875rem
+Code or Monospace Text (if needed)
+Inline code snippets: 0.875rem – 1rem
+Code blocks: 1rem – 1.125rem
+Base font-size 16px

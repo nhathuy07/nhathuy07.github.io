@@ -1,0 +1,374 @@
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+#f_year {
+    padding: 5px;
+    font-size: 1rem;
+    color: #3c46ff;
+    margin-right: 5px;
+    background-color: white;
+    border-color: #3c46ff;
+    border-radius: 5px;
+}
+
+#f_clear_btn {
+    padding: 5px;
+    font-size: 1rem;
+    color: #3c46ff;
+    margin-right: 5px;
+    background-color: white;
+    border-color: #3c46ff;
+    border-radius: 5px;
+    border-style: solid;
+}
+
+#f_prize {
+    padding: 5px;
+    font-size: 1rem;
+    color: #3c46ff;
+    margin-right: 5px;
+    background-color: white;
+    border-color: #3c46ff;
+    border-radius: 5px;
+}
+
+#f_prize:hover {
+    background: #3c46ff;
+    color: white;
+}
+
+#f_year:hover {
+    background: #3c46ff;
+    color: white;
+}
+#f_clear_btn:hover {
+    background: #3c46ff;
+    color: white;
+}
+
+.banner .academics {
+    margin-top: 50px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100vw;
+    margin: 0px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.cicon {
+    width: 1.5rem;
+    text-align: center;
+}
+
+
+
+.banner {
+    margin-top:90px;
+    margin-bottom: 90px;
+    max-width: 1050px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    transform: translate(0, -50px);
+}
+
+.details {
+    align-items: center;
+    width: 100vw;
+
+    align-self: center;
+    margin: 0px
+
+}
+
+div#certifications {
+
+    display: flex;
+    max-width: 1050px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    flex-direction: column;
+
+}
+
+#certifications .cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: space-between;
+    gap: 10px;
+    scale: 1 1;
+
+
+}
+
+#certifications .card {
+    transform: scale(1, 1);
+    transition: transform 0.1s ease-out;
+
+}
+
+#certifications .card:hover {
+    z-index: 10;
+    background: linear-gradient(45deg, #39c7ff 0%, #8336ff 100%);
+    transform: scale(1.1, 1.1);
+    color: white;
+}
+
+
+#certifications .cards div {
+    flex-grow: 1;
+    box-shadow: 0px 0px 5px 0px #00000041;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+i.fa-solid {
+    font-size: small;
+    vertical-align: middle;
+}
+
+.link {
+    font-weight: bold;
+    color: inherit;
+    text-decoration: none;
+}
+
+.link:hover {
+    color:#1CA7EC
+}
+
+.banner_background {
+    color: white;
+    margin: 0px;
+    height: max-content;
+    width: 100vw;
+    background:
+        linear-gradient(30deg, #0e171c 0%, #102A3B 100%);
+    clip-path:polygon(0 0, 100vw 0, 100% 70%, 0 100%);
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner .left {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-left: 10px;
+}
+
+
+
+.banner .right {
+    align-items: flex-start;
+    display: flex;
+}
+
+.banner .bottom {
+    margin-left: 30px;
+}
+
+.banner .top {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    justify-content: center;
+    
+}
+
+#certifications > h1 {
+    margin-left: 10px;
+}
+
+#certifications .cards {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: calc(100% - 20px);
+} 
+
+#certifications .cards img {
+    margin-top: 17px;
+}
+
+#awards {
+    display: flex;
+    max-width: 1050px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+}
+
+#projects {
+    display: flex;
+    max-width: 1050px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    flex-direction: column;
+    margin-top: 40px;
+}
+
+#awards h1 {
+    margin-left: 10px;
+    flex-grow: 1;
+}
+
+.awards_title {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+.awards_title span {
+
+    margin-right: 10px;
+    align-self: center;
+}
+
+.banner .left h1 {
+    margin-left: -0.23rem;
+    text-shadow: rgba(16, 16, 16, 0.278) 1px 0 10px;
+    font-size: 4rem;
+    margin-top: 0px;
+    margin-bottom: 12px;
+    font-weight: bolder;
+    text-align: left;
+}
+
+.banner .left #greet {
+    margin-top: 100px;
+    text-shadow: rgba(16, 16, 16, 0.278) 1px 0 10px;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+    
+}
+
+.banner .links {
+    margin-top: 24px;
+    gap: 15px;
+    display: flex;
+}
+
+.banner .links a {
+
+    /* Border gradient setup */
+    background: transparent;
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(45deg, #787FF6 50%, #1CA7EC 100% );
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    box-shadow: 0px 0px 5px 0px rgb(4, 80, 118);
+    transform: scale(1, 1);
+    transition: transform 0.1s ease-out;
+    
+}
+
+
+
+.banner .links a:hover {
+    transform: scale(1.1, 1.1);
+    color: #142129;
+    border-image-source: linear-gradient(to right, #787FF6 0%, #1CA7EC 100% );
+    background: linear-gradient(to right, #787FF6 0%, #1CA7EC 100% );
+}
+
+.border-gradient {
+  border: 10px solid;
+  border-image-slice: 1;
+  border-width: 5px;
+}
+.border-gradient-purple {
+  border-image-source: linear-gradient(to left, #743ad5, #d53a9d);
+}
+
+.banner .left #tagline {
+    font-size: 1.2rem;
+    opacity: 0.7;
+}
+
+.award_list {
+    display: flex;
+    flex-grow: 1;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.award_list .award_card {
+    padding: 15px;
+    border-radius: 10px;
+    /* flex-grow: 1; */
+    width: 29.4%;
+    box-shadow: 0px 0px 5px 0px #00000041;
+}
+
+.award_card p {
+    color: gray;
+}
+
+.award_card .award_title {
+    font-weight: 400;
+}
+
+.award_card h3 {
+    font-size: large;
+}
+
+.award_card .award_title {
+    font-size: large;
+}
+
+.award_card img {
+    /* border-radius: 10px; */
+    box-shadow: 0px 0px 5px 0px #0000004f;
+}
+
+@media screen and (max-width: 1036px) {
+    .award_list .award_card {
+        width: 45.3%;
+
+    }
+
+    .cards .card {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 819px) {
+    .award_list .award_card {
+        width: 100%;
+
+    }
+
+    .award_card h3 {
+        font-size: x-large;
+        margin-bottom: 5px;
+        margin-top: 10px;
+    }
+
+    .award_card .award_title {
+        font-size: large;
+        font-weight: 400;
+    }
+}

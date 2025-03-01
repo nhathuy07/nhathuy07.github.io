@@ -1,0 +1,48 @@
+/* Modal Styles */
+#image-modal {
+    z-index: 100;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Modal Content */
+#image-modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 100vh; /* Prevents y-axis overflow */
+    overflow-y: auto; /* Scrollable if needed */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Image inside modal */
+#image-modal img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Close button */
+#close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: rgb(53, 53, 53);
+    background-color: rgb(255, 255, 255);
+    border-radius: 60px;
+    border: none;
+    width: 48px;
+    height: 48px;
+    /* font-size: 48px; */
+    cursor: pointer;
+}
+
+

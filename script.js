@@ -89,6 +89,16 @@ function toggleModal(open) {
     }
 }
 
+// Open image view
+function openImgModal(src) {
+    document.getElementById("image-modal-img").src = src;
+    document.getElementById("image-modal").style.display = "flex";
+}
+//Close image view
+function closeImgModal() {
+    document.getElementById("image-modal").style.display = "none";
+}
+
 function filterAwards(ev) {
 
     let f_year = document.getElementById("f_year")
