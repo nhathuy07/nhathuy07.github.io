@@ -3,77 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <meta title="My Portfolio">
     <title>My Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&display=swap&subset=latin" rel="stylesheet"> -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..700;1,14..32,400..700&display=swap&subset=latin">
-
-
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="modal.css">
-
-    <script src="script-ugly.js"></script>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     
-    <title>Document</title>
+    <link rel="stylesheet" href="style_homepage.css">
+    <link rel="stylesheet" href="style_modal.css">
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/0d4f809704.js" crossorigin="anonymous"></script>
 </head>
-<body onresize="checkScreenSize()">
+<body>
 
+    <a href="#top" style="clip-path: circle(30px) ;position: fixed; bottom: 20px; right: 20px; z-index:1000;background-color: #3c46ff; color: white; padding: 40px 40px; font-size: 2rem; text-align: center; text-decoration: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
     
-    <div class="banner">
-        <div class="banner_content">
-            <div id="left">
-                <h2>Greetings, I'm</h2>
-                <h1>Huy Nguyen</h1>
-                <h3>A high school senior who loves making apps and experimenting with new ideas.</h2>
+    <div class="banner_background">
+        <div class="banner">
+            <div class="top">
+                <div class="left">
+                    <p id="greet">Greetings, I'm</p>
+                    <h1>Huy Nguyen</h1>
+                    <p id="tagline">A high-school student with a passion for programming and experimentation.</p>
+                    <div class="academics">
+                        <p><i class="cicon fa-solid fa-graduation-cap"></i> <a class="link" href="https://lomonoxop.edu.vn" target="_blank">Lomonoxop Secondary and High School</a></p>
+                        <p><i class="cicon fa-solid fa-star"></i> GPA 9.56/10 (Grade 12 Sem. 1)</p>
+                        <p><i class="cicon fa-solid fa-award"></i> School's scholarship recipient since <a onclick="openImgModal('assets/quyet_dinh_trao_hb.webp')" class="link">Sept. 2024</a> </p>
+                    </div>
 
-                <a class="styled" id="profile_link" href="#detail">My Portfolio</a>
-                <a style="margin-left: 10px;" class="styled" id="profile_link" href="#features_bmark">Projects</a>
-                <a href="#contacts_2" class="styled" style="margin-left:9px;">Contacts</a>
-            
+                    
+                    <div class="links">
+                        <a href="#certifications">Certifications & Projects</a>
+                        <!-- <a href="#projects">Projects</a> -->
+                        <a href="#awards">Awards</a>
+                        <a href="#contacts">Contacts</a>
+                    </div>
+                    
+                </div>
+                <div class="right">
+                    <img src="assets/homepage/p.png" width="400px">
+                </div>
             </div>
-            <div id="right">
-                <img width="300px" src="assets/p.webp" alt="">
-            </div>
+
         </div>
-        
     </div>
 
+    <div class="details">
 
-    <div id="detail">
-        <h2>👤 My academic portfolio</h2>
-
-        <div id="overview_row">
-            <div id="education">
-                <h3>🎓 Education</h3>
-                <p><a target="_blank" href="https://lomonoxop.edu.vn/">Lomonoxop Secondary and High School</a>, class of 2025</p>
-                <p>GPA:</p>
-                <ul id="gpa_list" list-style-type="disk">
-                    <li>10th Grade: 9.23/10</li>
-                    <li>11th Grade: 9.13/10</li>
-                    <li>12th Grade (1st semester): 9.56/10</li>
-                </ul>
-                <p><a href="sub/school_scholarship_roll.html">School's scholarship roll</a>: Sept. 2024 thru May 2025</p>
+        <div id="certifications">
+            <h1 style="margin-bottom: 12px;">🎓 Certifications</h1>
+            <!-- <p style="padding-left: 12px; margin-top: 0px; color: gray;">Click to enlarge</p> -->
+            <div class="cards">
+            <div class="card" onclick="openImgModal('assets/certs/archive/ielts-score-slip-scanned.webp')">
+                <img width="100%" src="assets/homepage/certs-1.png" alt="">
+                <p>Language proficiency</p>
+                <h2>IELTS 8.0  <i class="fa-solid fa-arrow-up-right-from-square"></i></h2>
             </div>
             
-            <div class="vl"></div>
-
-            <div id="certs">
-                <h3>📄 Certifications</h3>
-                <ul id="cert_list" list-style-type="disk">
-                    <a href="sub/microsoft_office_specialist_cert.html"><li>Microsoft Office Specialist Associate</li></a>
-                    <a href="sub/ielts_score_slip.html"><li>IELTS 8.0</li></a> 
-                    <a href="sub/sat_score_slip.html"><li>SAT 1550/1600</li></a>
-                </ul>
-
+            <div class="card" onclick="openImgModal('assets/certs/archive/sat_score_slip_pages-to-jpg-0001.webp')">
+                <img width="100%" src="assets/homepage/certs.png" alt="">
+                <p>Scholastic capability</p>
+                <h2>SAT 1550/1600  <i class="fa-solid fa-arrow-up-right-from-square"></i></h2>
+            </div>
+        
+            <div class="card" onclick="openImgModal('assets/certs/archive/microsoft-office-specialist.webp')">
+                <img width="100%" src="assets/homepage/certs-2.png" alt="">
+                <p>Informatics skills</p>
+                <span>
+                    <h2>Microsoft Office <br>Specialist  <i class="fa-solid fa-arrow-up-right-from-square"></i></h2>
+                </span> 
+                
             </div>
         </div>
+        </div>
+
+        <div id="projects">
+            <h1>⭐ Featured projects</h1>
+
+                <div class="proj_card" id="text2quiz">
+                    <img src="assets/homepage/project1.png" alt="">
+                    <div class="feat_info">
+                        <h2>Text2Quiz</h2>
+                        <p style="line-height: 1.5;">Get instant <b>quizzes & flashcards</b> tuned to your subjects of interest using AI. Developed for Vietnam's National Young Competition for Information Processing as a solo entry.</p>
+                        
+                        <div class="spaced_container">
+                            <a target="_blank" href="https://text2quiz-three.vercel.app">Try it out!</a>
+                            <a href="sub/text2quiz_behindthescenes.html">Behind-the-scenes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj_card" id="pygame4kids">
+                    <img src="assets/homepage/project2.png" alt="">
+                    <div class="feat_info">
+                        <h2>PyGame for Kids</h2>
+                        <p style="line-height: 1.5;">A small pay-it-forward project aiming to familiarize young children with <b>Python and game programming.</b> Involves tutoring, curriculum planning, student onboarding and evaluation.</p>
+                        
+                        <div class="spaced_container">
+                            <a href="sub/pygame4kids.html">See more...</a>
+                        </div>
+            
+                    </div>
+                </div>
+                <a class="styled" >See more projects...</a>
+
+
+        </div>
+
+        
+        <hr style="margin-top: 80px; width: 100px; align-self: center;">
 
         <div id="awards">
             <div class="awards_title">
-                <h3>🏅 Awards & honors</h3>
+                <h1>🏅 Awards</h1>
                 <span>
                     
                     <select name="f_year" id="f_year" onchange="filterAwards(undefined)">
@@ -82,7 +125,7 @@
                     <select name="f_prize" id="f_prize" onchange="filterAwards(undefined)">
                         <option value="*">Any prize</option>
                     </select>
-                    <button onclick="resetFilter()">Clear</button>
+                    <button id="f_clear_btn" onclick="resetFilter()">Clear</button>
                 </span>
                 
             </div>
@@ -93,108 +136,24 @@
             
 
 
+        </div> 
+
+        <div id="contacts" style="margin-top: 30px; max-width: 1050px; align-self: center; margin-left: auto; margin-right: auto;">
+            <h1 style="padding: 5px;">👤 Contacts</h1>
+            <p style="padding-left: 10px;">E-mail: <a href="mailto:huyndn2007@gmail.com">huyndn2007@gmail.com</a></p>
+            <p style="padding-left: 10px;">GitHub: <a href="https://github.com/nhathuy07">nhathuy07</a></p>
         </div>
 
-        
-        
     </div>
 
-    <span style="padding: 0px; margin: 0px; border-width: 0px; height: 0px;" id="features_bmark"></span>
 
-    <div id="features">
-        <h2>⭐ Passion projects</h2>
-        <div class="feat_card">
-            <div class="feat_illustr">
-                <img width="100%" src="assets/text2quiz.webp" alt="">
-            </div>
-            <div class="feat_info">
-                <h3>Text2Quiz</h3>
-                <p style="line-height: 1.5;">Get instant <b>quizzes & flashcards</b> tuned to your subjects of interest using AI. Developed for Vietnam's National Young Competition for Information Processing as a solo entry.</p>
-                
-                <div class="spaced_container">
-                    <a class="styled_noborder" target="_blank" href="https://text2quiz-three.vercel.app">Try it out!</a>
-                    <a class="styled_noborder" href="sub/text2quiz_behindthescenes.html">Behind-the-scenes</a>
-                </div>
-            </div>
+
+    <!-- Modal -->
+    <div id="image-modal" onclick="closeImgModal()">
+        <button id="close-btn" onclick="closeImgModal()"><i class="fa-solid fa-xmark"></i></button>
+        <div id="image-modal-content">
             
-            
-        </div>
-        <div class="feat_card">
-            <div class="feat_illustr">
-                <img src="assets/pygame4kids.webp" width="100%" alt="">
-            </div>
-            
-            <div class="feat_info">
-                <h3>PyGame for Kids</h3>
-                <p style="line-height: 1.5;">A small pay-it-forward project aiming to familiarize young children with <b>Python and game programming.</b> Involves tutoring, curriculum planning, student onboarding and evaluation.</p>
-                
-                <div class="spaced_container">
-                    <a class="styled_noborder" href="sub/pygame4kids.html">See more...</a>
-                </div>
-    
-            </div>
-            
-            
-            
-        </div>
-        <div style="min-width: 100%;display: flex;justify-content: center;">
-            <a style="align-self: center;" class="styled" onclick="toggleModal(true)">View other projects</a>
-        </div>
-
-
-        
-    </div>
-
-    <div class="contacts" id="contacts_2">
-        <h2>Contacts</h2>
-        <a target="_blank" href="mailto:huyndn2007@gmail.com">E: huyndn2007@gmail.com</a>
-    </div>
-
-    <div id="screen_warning" class="modal ">
-        <div class="modal-content modal-content-centered" style="height: 80%;">
-            <h1 style="font-size: 7rem; margin-bottom: 5px;">⚠️</h1>
-            <h2 style="text-align: center;">Please use a larger screen for this site to display properly</h2>
-            <a class="styled" onclick="bypassWarning()">Continue</a>
-        </div>
-        
-    </div>
-
-    <div id="project_modal" class="modal">
-        <div class="modal-content">
-            <a class="styled_noborder" onclick="toggleModal(false)">&times; Close</a>
-            <!-- <span>Close</span> -->
-             <h2 style="margin-bottom: 5px; margin-top: 40px;">Here are my other programming projects</h2>
-             <p style="margin-top: 10px; margin-bottom: 40px;">Feel free to explore!</p>
-
-             <div class="modal_proj_card">
-                <h2>Catch the Primes</h2>
-                <p>A time-attack game where you catch prime number orbs using your trackpad. Features dreamy aesthetics and soundscapes.</p>
-                <div class="action_btns">
-                    <a class="styled_noborder" href="https://github.com/nhathuy07/CatchThePrimes_Game/releases/download/1.0.0/exe.win-amd64-3.10.zip">Download (Windows)</a> 
-                    <a class="styled_noborder" target="_blank" href="https://github.com/nhathuy07/CatchThePrimes_Game">Source Code</a>
-                </div>
-                
-            </div>
-
-             <div class="modal_proj_card">
-                <h2>BeatCatcher</h2>
-                <p>A rhythm mini-game that you play using your own song library.</p>
-                <div class="action_btns">
-                    <a class="styled_noborder" href="https://github.com/nhathuy07/BeatCatcher/releases/download/v0.1.1/BeatCatcher-0.1.1.exe">Download (Windows)</a> 
-                    <a class="styled_noborder" target="_blank" href="https://github.com/nhathuy07/BeatCatcher">Source Code</a>
-                </div>
-            
-            </div>
-             
-             <div class="modal_proj_card">
-                <h2>SpaceMiner</h2>
-                <p>An end-of-course project for <a target="_blank" href="https://steamforvietnam.org/en">STEAM for Vietnam's CS102 Course.</a> Requires Python 3.8+ and PyGame to run.</p>
-                <div class="action_btns">
-                    <!-- <a class="styled_noborder" href="https://github.com/nhathuy07/BeatCatcher/releases/download/v0.1.1/BeatCatcher-0.1.1.exe">Downloads (Windows)</a>  -->
-                    <a class="styled_noborder" target="_blank" href="https://github.com/nhathuy07/CodingCourseProject">Source Code</a>
-                </div>
-            </div>
-
+            <img id="image-modal-img">
         </div>
     </div>
 

@@ -6,7 +6,7 @@ html {
   
 body {
     margin: 0px;
-    font-family: "Inter", serif;
+    font-family: "Montserrat", serif;
     /* font-size: 1.17rem; */
 }
 
@@ -23,7 +23,7 @@ a:hover {
 
 
 h1 {
-    font-family: "Inter", serif;
+    font-family: "Montserrat", serif;
     font-weight: 700;
     font-size: 5rem;
 }
@@ -124,7 +124,7 @@ div#right {
 .overview {
     box-shadow: 0px 0px 5px 0px #00000040;
     padding: 10px;
-
+    border-radius: 10px;
 }
 
 .overview p {
@@ -274,18 +274,19 @@ div#right {
 }
 
 a.styled {
-    color: #235a9a;
+    color: #ffffff;
     padding: 10px;
-    border-color: #235a9a;
+    border-color: #ffffff;
     border-width: 2px;
     border-style: solid;
     text-decoration: none;
+    transition: background-color 0.1s ease-out;
 
 }
 
 a.styled:hover {
-    background-color: #235a9a;
-    color: white;
+    background-color: white;
+    color: #235a9a;
 }
 
 .nopadding {
@@ -294,14 +295,14 @@ a.styled:hover {
 
 
 a.styled_noborder {
-    color: #235a9a;
+    color: white;
     padding: 10px;
     text-decoration: none;
 }
 
 a.styled_noborder:hover {
-    background-color: #235a9a;
-    color: white;
+    background-color: #ffffff;
+    color: #235a9a;
 }
 
 .feat_info h3 {
@@ -349,11 +350,11 @@ button {
     border-style: solid;
     border-color: #235a9a;
     border-width: 1.5px;
-    font-family: "Inter", sans-serif;
+    font-family: "Montserrat", sans-serif;
 }
 
 button:hover {
-    font-family: "Inter", sans-serif;
+    font-family: "Montserrat", sans-serif;
     padding: 5px;
     color: white;
     background-color: #235a9a;
