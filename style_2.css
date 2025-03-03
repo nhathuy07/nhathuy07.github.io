@@ -154,7 +154,7 @@ body {
 }
 
 .b_sub {
-
+    background-color: #34344A;
     flex-direction: column !important;
     padding-bottom: 90px;
     color: white;

@@ -131,7 +131,7 @@ div#certifications {
 #certifications .card:hover {
     z-index: 10;
     background: linear-gradient(45deg, #39c7ff 0%, #8336ff 100%);
-    transform: scale(1.1, 1.1);
+    transform: scale(1.02, 1.02);
     color: white;
 }
 
@@ -358,7 +358,7 @@ i.fa-solid {
 
 
 .banner .links a:hover {
-    transform: scale(1.1, 1.1);
+    transform: scale(1.07, 1.07);
     color: #142129;
     border-image-source: linear-gradient(to right, #787FF6 0%, #1CA7EC 100% );
     background: linear-gradient(to right, #787FF6 0%, #1CA7EC 100% );
