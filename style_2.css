@@ -150,10 +150,14 @@ body {
     margin-bottom: 70px;
     font-size: 3rem;
     margin-top: 0px;
+    text-shadow: 0px 0px 5px #00000058;
 }
 
 .b_sub {
 
     flex-direction: column !important;
     padding-bottom: 90px;
+    color: white;
+    /* background: radial-gradient(circle at 100%,#FFFFFF00 50%, #787ef675), radial-gradient(circle at 0%,#EC1AE8 0%, #FFFFFF00 100%);
+     */
 }

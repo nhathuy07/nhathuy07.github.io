@@ -234,6 +234,13 @@ i.fa-solid {
     margin: 10px;
     border-radius: 10px;
     align-items: center;
+    transition: all 0.1s ease-out;
+    /* transition: scale 0.1 ease-out; */
+}
+
+.proj_card:hover {
+    box-shadow: -4px -4px 20px 0px #a977ff, 4px 4px 20px 0px #39c7ff;
+    scale: 1.005 1.005;
 }
 
 /* .feat_info {
@@ -337,7 +344,7 @@ i.fa-solid {
     background: transparent;
     border: 2px solid;
     border-image-slice: 1;
-    /* border-width: 2px; */
+    
     border-image-source: linear-gradient(45deg, #787FF6 50%, #1CA7EC 100% );
     color: white;
     padding: 10px;
@@ -358,6 +365,7 @@ i.fa-solid {
 }
 
 .border-gradient {
+    /* border-radius: 10px; */
   border: 10px solid;
   border-image-slice: 1;
   border-width: 5px;
@@ -386,6 +394,14 @@ i.fa-solid {
     /* flex-grow: 1; */
     width: 29.4%;
     box-shadow: 0px 0px 5px 0px #00000041;
+    /* transition: scale 0.07s ease-out; */
+    transition: all 0.07s ease-out;
+}
+
+.award_card:hover {
+    scale: 1.03 1.03;
+    z-index: 1;
+    box-shadow: 0px 0px 10px 0px #00000041;
 }
 
 .award_card p {
