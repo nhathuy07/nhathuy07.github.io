@@ -3,6 +3,16 @@ html {
     overflow-x: hidden;
 }
 
+a.styled {
+    align-self: center; margin-top: 20px; padding: 10px; color: #3c46ff; border: 1.5px solid #3c46ff;
+    background-color: #ffffff;
+    transition: background-color 0.1s ease-out;
+}
+
+a.styled:hover {
+    background-color: #3c46ff; color: white;
+}
+
 #f_year {
     padding: 5px;
     font-size: 1rem;
@@ -19,6 +29,7 @@ html {
     color: #3c46ff;
     margin-right: 5px;
     background-color: white;
+    font-weight: 700;
     border-color: #3c46ff;
     border-radius: 5px;
     border-style: solid;
