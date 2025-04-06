@@ -1,4 +1,5 @@
-# My game projects directory
+# Projects directory
+## 🎮 Games
 
 > These are all the games projects I have made from 2022-2024, when I started learning Python programming, using **Python** and the **PyGame** library, feel free to explore!
 
