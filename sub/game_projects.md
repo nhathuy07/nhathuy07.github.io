@@ -1,6 +1,6 @@
 # My game projects directory
 
-> These are all the games projects I have made from 2022-2024, where I started learning Python programming, using **Python** and the **PyGame** library, feel free to explore!
+> These are all the games projects I have made from 2022-2024, when I started learning Python programming, using **Python** and the **PyGame** library, feel free to explore!
 
 > Some games may have pre-packaged executables for Windows, while other do not. These will be provided soon.
 
