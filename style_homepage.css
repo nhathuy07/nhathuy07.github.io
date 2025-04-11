@@ -205,6 +205,11 @@ i.fa-solid {
     margin-left: 10px;
 }
 
+
+#projects > h1 {
+    margin-left: 10px;
+}
+
 #certifications .cards {
     margin-left: 10px;
     margin-right: 10px;
@@ -286,6 +291,7 @@ i.fa-solid {
 
 
 #projects {
+    padding-top: 30px; 
     display: flex;
     max-width: 1050px;
     align-self: center;
