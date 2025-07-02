@@ -1,6 +1,6 @@
 # Projects directory
 
-## 🧰 Apps and Utiities
+## 🧰 Apps and Utilities
 
 1. **Text2Quiz**: Generates **revision questions and flashcards** for your study materials using LLM. Supports **plaintext, document files and scanned pages** as input document. Developed as an independent project for Vietnam's 30th National Young Contest for Information Processing, using Angular and Starlette (Python). 
 <br>[(Live Demo)](https://text2quiz-three.vercel.app/), [(Client Source)](https://github.com/nhathuy07/Text2Quiz), [(Server Source)](https://huggingface.co/spaces/nhathuy07/text2quiz_backend/tree/main)
